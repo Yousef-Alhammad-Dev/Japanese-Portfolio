@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 2000); // كل ثانيتين يظهر وميض جديد
 });
 
-// 🧠 Japanese Quiz with Score + Restart Button
-document.addEventListener("DOMContentLoaded", () => {
+// 🌸 MINI QUIZ - FIXED VERSION (Works 100%)
+document.addEventListener("DOMContentLoaded", function () {
   const quizData = [
     {
       question: "「猫」 の意味は何ですか？",
@@ -72,39 +72,112 @@ document.addEventListener("DOMContentLoaded", () => {
       options: ["Car", "School", "Book"],
       answer: "School",
     },
+  ];
+
+  const questionEl = document.getElementById("mini-question");
+  const optionsEl = document.getElementById("mini-options");
+  const resultEl = document.getElementById("mini-result");
+  const scoreEl = document.getElementById("mini-score");
+  const restartBtn = document.getElementById("mini-restart-btn");
+
+  // لو الصفحة مش فيها الكويز
+  if (!questionEl || !optionsEl) return;
+
+  let score = 0;
+
+  // دالة تحميل السؤال
+  function loadQuestion() {
+    const randomQuiz = quizData[Math.floor(Math.random() * quizData.length)];
+    questionEl.textContent = randomQuiz.question;
+    resultEl.textContent = "";
+    optionsEl.innerHTML = "";
+
+    // توليد الخيارات الجديدة
+    randomQuiz.options.forEach((optionText) => {
+      const btn = document.createElement("button");
+      btn.classList.add("option");
+      btn.textContent = optionText;
+      optionsEl.appendChild(btn);
+
+      // هنا نربط الحدث مباشرة بعد الإنشاء
+      btn.addEventListener("click", function () {
+        if (optionText === randomQuiz.answer) {
+          resultEl.textContent = "✅ Correct!";
+          resultEl.style.color = "#388e3c";
+          score++;
+          scoreEl.textContent = "Score: " + score;
+          setTimeout(loadQuestion, 800);
+        } else {
+          resultEl.textContent = "❌ Wrong!";
+          resultEl.style.color = "#d32f2f";
+        }
+      });
+    });
+  }
+
+  // زر إعادة التشغيل
+  restartBtn.addEventListener("click", function () {
+    score = 0;
+    scoreEl.textContent = "Score: " + score;
+    resultEl.textContent = "";
+    loadQuestion();
+  });
+
+  // أول سؤال عند التشغيل
+  loadQuestion();
+});
+
+// ✨ Scroll Animation for Kanji Cards
+const kanjiCards = document.querySelectorAll(".kanji-card");
+window.addEventListener("scroll", () => {
+  kanjiCards.forEach((card) => {
+    const cardTop = card.getBoundingClientRect().top;
+    if (cardTop < window.innerHeight - 100) {
+      card.style.opacity = 1;
+      card.style.transform = "translateY(0)";
+    }
+  });
+});
+
+// 🎯 N5 Kanji Quiz
+document.addEventListener("DOMContentLoaded", () => {
+  const kanjiQuiz = [
     {
-      question: "「友達」 の意味は何ですか？",
-      options: ["Teacher", "Friend", "Food"],
-      answer: "Friend",
+      question: "「山」 の意味は何ですか？",
+      options: ["River", "Mountain", "School"],
+      answer: "Mountain",
     },
     {
-      question: "「空」 の意味は何ですか？",
-      options: ["Sky", "Rain", "Bird"],
-      answer: "Sky",
+      question: "「水」 の意味は何ですか？",
+      options: ["Fire", "Tree", "Water"],
+      answer: "Water",
     },
     {
-      question: "「日本」 の意味は何ですか？",
-      options: ["China", "Japan", "Korea"],
-      answer: "Japan",
+      question: "「日」 の意味は何ですか？",
+      options: ["Sun", "Moon", "Person"],
+      answer: "Sun",
     },
     {
-      question: "「先生」 の意味は何ですか？",
-      options: ["Student", "Teacher", "Doctor"],
-      answer: "Teacher",
+      question: "「木」 の意味は何ですか？",
+      options: ["Tree", "River", "Mountain"],
+      answer: "Tree",
+    },
+    {
+      question: "「人」 の意味は何ですか？",
+      options: ["Person", "Animal", "Car"],
+      answer: "Person",
     },
   ];
 
   const questionEl = document.getElementById("question");
   const optionsEl = document.getElementById("options");
   const resultEl = document.getElementById("result");
-  const scoreEl = document.getElementById("score");
   const restartBtn = document.getElementById("restart-btn");
 
   let score = 0;
 
-  // 🎯 تحميل سؤال جديد عشوائي
   function loadQuestion() {
-    const randomQuiz = quizData[Math.floor(Math.random() * quizData.length)];
+    const randomQuiz = kanjiQuiz[Math.floor(Math.random() * kanjiQuiz.length)];
     questionEl.textContent = randomQuiz.question;
     resultEl.textContent = "";
     optionsEl.innerHTML = "";
@@ -113,34 +186,40 @@ document.addEventListener("DOMContentLoaded", () => {
       const btn = document.createElement("button");
       btn.classList.add("option");
       btn.textContent = optionText;
-
       btn.addEventListener("click", () => {
         if (optionText === randomQuiz.answer) {
           resultEl.textContent = "✅ 正解！(Correct!)";
           resultEl.style.color = "#388e3c";
-          score++;
-          scoreEl.textContent = `スコア: ${score}`;
-          setTimeout(() => {
-            loadQuestion();
-          }, 800);
+          setTimeout(loadQuestion, 800);
         } else {
           resultEl.textContent = "❌ 間違い！(Wrong!)";
           resultEl.style.color = "#d32f2f";
         }
       });
-
       optionsEl.appendChild(btn);
     });
   }
 
-  // 🧮 زر إعادة التشغيل
   restartBtn.addEventListener("click", () => {
-    score = 0;
-    scoreEl.textContent = `スコア: ${score}`;
     resultEl.textContent = "";
     loadQuestion();
   });
 
-  // 🚀 تحميل أول سؤال عند تشغيل الصفحة
   loadQuestion();
+});
+
+// 🌸 Sakura Toggle Button
+let sakuraActive = true;
+const toggleButton = document.getElementById("toggle-sakura");
+const sakuraContainer = document.querySelector(".sakura");
+
+toggleButton.addEventListener("click", () => {
+  if (sakuraActive) {
+    sakuraContainer.style.display = "none";
+    toggleButton.textContent = "🌸 Resume Sakura";
+  } else {
+    sakuraContainer.style.display = "block";
+    toggleButton.textContent = "🌸 Pause Sakura";
+  }
+  sakuraActive = !sakuraActive;
 });
