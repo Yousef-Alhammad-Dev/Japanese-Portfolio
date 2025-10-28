@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #fff9fb;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+}
+
+/* الشريط العلوي */
+.navbar {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h1 {
+  color: #c6285d;
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.navbar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: #c6285d;
+}
+
+/* الصفحة الرئيسية */
+#home {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(255, 247, 249, 0.9),
+      rgba(255, 249, 251, 0.95)
+    ),
+    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  padding: 120px 20px;
+  border-radius: 15px;
+}
+
+#home h2 {
+  font-size: 2.5em;
+  color: #c6285d;
+  margin-bottom: 15px;
+}
+
+#home p {
+  font-size: 1.1em;
+  color: #444;
+}
+
+#home .en {
+  color: #777;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* الأقسام */
+section {
+  width: 80%;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* المفردات */
+.word {
+  background-color: #fff5f8;
+  border: 1px solid #f3cce2;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 10px auto;
+  width: 200px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.word:hover {
+  background-color: #fde6ef;
+  transform: scale(1.05);
+}
+
+.jp {
+  font-size: 1.3em;
+  color: #c6285d;
+  font-weight: bold;
+}
+
+.en {
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* القواعد */
+.rule {
+  background-color: #fef7fa;
+  border-left: 5px solid #c6285d;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+}
+
+/* المحادثة */
+.dialogue {
+  background-color: #fff3f7;
+  border: 1px solid #f5ccd9;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+/* الثقافة */
+.culture-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* الإنجازات */
+#achievements {
+  text-align: center;
+  background-color: #fff3f8;
+  border: 1px solid #f4cfe1;
+}
+
+/* الفوتر */
+footer {
+  text-align: center;
+  color: #777;
+  padding: 20px 0;
+}
+
+/* 🌸 Sakura petals animation */
+.sakura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  top: -10px;
+  background: rgba(255, 182, 193, 0.9);
+  border-radius: 150% 0 150% 0;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ✨ تأثير الظهور التدريجي */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌸 Sakura Glow Effect */
+.sakura-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 182, 193, 0.7);
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0;
+  animation: glow 4s ease-in-out forwards;
+}
+
+@keyframes glow {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* 🧠 Mini Quiz Section */
+#quiz {
+  background: rgba(255, 240, 245, 0.8);
+  border-radius: 15px;
+  padding: 40px 20px;
+  margin-top: 60px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#quiz h2 {
+  font-size: 1.8em;
+  color: #c6285d;
+  margin-bottom: 15px;
+}
+
+#question {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.option {
+  background-color: #f8cdd3;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option:hover {
+  background-color: #e68fa0;
+  color: #fff;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#score {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #c6285d;
+  margin-bottom: 10px;
+}
+
+#restart-btn {
+  background-color: #f8cdd3;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  margin-top: 15px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#restart-btn:hover {
+  background-color: #e68fa0;
+  color: #fff;
+}
