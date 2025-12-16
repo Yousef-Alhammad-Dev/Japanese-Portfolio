@@ -142,3 +142,15 @@ toggleButton.addEventListener("click", () => {
   }
   sakuraActive = !sakuraActive;
 });
+
+document.querySelectorAll(".kanji-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    if (card.classList.contains("flipped")) return;
+
+    card.classList.add("flipped");
+
+    setTimeout(() => {
+      card.classList.remove("flipped");
+    }, 5000);
+  });
+});
