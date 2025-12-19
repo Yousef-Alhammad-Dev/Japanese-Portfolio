@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
+  let remainingQuestions = [...quizData];
+
   const questionEl = document.getElementById("mini-question");
   const optionsEl = document.getElementById("mini-options");
   const resultEl = document.getElementById("mini-result");
@@ -85,27 +87,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let score = 0;
 
-  // دالة تحميل السؤال
   function loadQuestion() {
-    const randomQuiz = quizData[Math.floor(Math.random() * quizData.length)];
+    // إذا خلصت كل الأسئلة، نرجع نعبّيهم من جديد
+    if (remainingQuestions.length === 0) {
+      remainingQuestions = [...quizData];
+    }
+
+    // اختيار سؤال عشوائي بدون تكرار
+    const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+    const randomQuiz = remainingQuestions.splice(randomIndex, 1)[0];
+
+    // عرض السؤال
     questionEl.textContent = randomQuiz.question;
     resultEl.textContent = "";
     optionsEl.innerHTML = "";
 
-    // توليد الخيارات الجديدة
+    // إنشاء الأزرار
     randomQuiz.options.forEach((optionText) => {
       const btn = document.createElement("button");
       btn.classList.add("option");
       btn.textContent = optionText;
       optionsEl.appendChild(btn);
 
-      // هنا نربط الحدث مباشرة بعد الإنشاء
+      // عند الضغط على خيار
       btn.addEventListener("click", function () {
         if (optionText === randomQuiz.answer) {
           resultEl.textContent = "✅ Correct!";
           resultEl.style.color = "#388e3c";
           score++;
           scoreEl.textContent = "Score: " + score;
+
+          // تحميل سؤال جديد بعد نصف ثانية
           setTimeout(loadQuestion, 800);
         } else {
           resultEl.textContent = "❌ Wrong!";
