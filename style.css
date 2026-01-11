@@ -401,3 +401,79 @@ footer {
 .presentation-link:hover {
   background: #d96c8f;
 }
+
+/* =========================
+   📱 Mobile Responsive Fix
+   ========================= */
+@media (max-width: 768px) {
+  /* 🏮 Navbar */
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar nav a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  /* 🌸 Hero */
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* 🈶 Vocabulary Grid */
+  .words-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  /* 📘 Grammar / 💬 Conversation */
+  section {
+    padding: 40px 20px;
+  }
+
+  /* 🈶 Kanji */
+  .kanji-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 🎤 Presentations & 📚 Homework */
+  .presentation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 🎯 Quiz */
+  #mini-options {
+    flex-direction: column;
+  }
+
+  .option {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  #mini-restart-btn {
+    width: 100%;
+  }
+
+  /* 🌸 Sakura toggle */
+  #toggle-sakura {
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
