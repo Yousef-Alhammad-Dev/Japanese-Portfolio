@@ -440,6 +440,16 @@ footer {
     gap: 15px;
   }
 
+  .vocab-category {
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #c6285d;
+  font-size: 1.4em;
+  border-left: 5px solid #c6285d;
+  padding-left: 10px;
+}
+
+
   /* 📘 Grammar / 💬 Conversation */
   section {
     padding: 40px 20px;
