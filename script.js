@@ -53,24 +53,314 @@ document.addEventListener("DOMContentLoaded", function () {
       answer: "Cat",
     },
     {
-      question: "「水」 の意味は何ですか？",
-      options: ["Fire", "Tree", "Water"],
-      answer: "Water",
-    },
-    {
       question: "「花」 の意味は何ですか？",
       options: ["Sky", "Flower", "Mountain"],
       answer: "Flower",
     },
     {
-      question: "「山」 の意味は何ですか？",
-      options: ["River", "Mountain", "House"],
-      answer: "Mountain",
-    },
-    {
       question: "「学校」 の意味は何ですか？",
       options: ["Car", "School", "Book"],
       answer: "School",
+    },
+    {
+      question: "パン ___ 食べます。",
+      options: ["を", "に", "で"],
+      answer: "を",
+    },
+    {
+      question: "学校 ___ 行きます。",
+      options: ["を", "へ", "で"],
+      answer: "へ",
+    },
+    {
+      question: "日本 ___ 行きます。",
+      options: ["を", "に", "で"],
+      answer: "に",
+    },
+    {
+      question: "家 ___ 勉強します。",
+      options: ["で", "に", "を"],
+      answer: "で",
+    },
+    {
+      question: "水 ___ 飲みます。",
+      options: ["を", "に", "へ"],
+      answer: "を",
+    },
+    {
+      question: "友だち ___ 話します。",
+      options: ["を", "と", "に"],
+      answer: "と",
+    },
+    {
+      question: "バス ___ 学校に行きます。",
+      options: ["で", "に", "を"],
+      answer: "で",
+    },
+    {
+      question: "ここ ___ トイレがあります。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "へや ___ ベッドがあります。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "パン ___ 食べません。",
+      options: ["を", "に", "で"],
+      answer: "を",
+    },
+    {
+      question: "学校 ___ 行きません。",
+      options: ["を", "へ", "で"],
+      answer: "へ",
+    },
+    {
+      question: "日本 ___ 行きません。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "家 ___ ごはんを食べます。",
+      options: ["で", "に", "を"],
+      answer: "で",
+    },
+    {
+      question: "友だち ___ 行きます。",
+      options: ["と", "に", "で"],
+      answer: "と",
+    },
+    {
+      question: "いす ___ 座ります。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "公園 ___ 行きます。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "テレビ ___ 見ます。",
+      options: ["を", "に", "で"],
+      answer: "を",
+    },
+    {
+      question: "音楽 ___ 聞きます。",
+      options: ["を", "に", "へ"],
+      answer: "を",
+    },
+    {
+      question: "学校 ___ 先生がいます。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "机 ___ 本があります。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "毎日 ___ 日本語を勉強します。",
+      options: ["は", "を", "に"],
+      answer: "は",
+    },
+    {
+      question: "今日は ___ 勉強します。",
+      options: ["は", "を", "に"],
+      answer: "は",
+    },
+    {
+      question: "コーヒー ___ 飲みません。",
+      options: ["を", "に", "で"],
+      answer: "を",
+    },
+    {
+      question: "朝 ___ パンを食べます。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "日曜日 ___ 何をしますか。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "学校 ___ 日本語を勉強します。",
+      options: ["で", "に", "を"],
+      answer: "で",
+    },
+    {
+      question: "友だち ___ 手紙を書きます。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "毎朝 ___ コーヒーを飲みます。",
+      options: ["は", "を", "に"],
+      answer: "は",
+    },
+    {
+      question: "へや ___ だれがいますか。",
+      options: ["に", "を", "で"],
+      answer: "に",
+    },
+    {
+      question: "学校 ___ 行きますか。",
+      options: ["へ", "を", "で"],
+      answer: "へ",
+    },
+    {
+      question: "「みず」 のいみはなんですか？",
+      options: ["Water", "Fire", "Tree"],
+      answer: "Water",
+    },
+    {
+      question: "「ごはん」 のいみはなんですか？",
+      options: ["Rice / Meal", "Bread", "Meat"],
+      answer: "Rice / Meal",
+    },
+    {
+      question: "「ともだち」 のいみはなんですか？",
+      options: ["Teacher", "Friend", "Family"],
+      answer: "Friend",
+    },
+    {
+      question: "「がっこう」 のいみはなんですか？",
+      options: ["House", "Hospital", "School"],
+      answer: "School",
+    },
+    {
+      question: "「せんせい」 のいみはなんですか？",
+      options: ["Student", "Teacher", "Doctor"],
+      answer: "Teacher",
+    },
+    {
+      question: "「いえ」 のいみはなんですか？",
+      options: ["House", "Room", "Garden"],
+      answer: "House",
+    },
+    {
+      question: "「やさい」 のいみはなんですか？",
+      options: ["Fruit", "Vegetables", "Meat"],
+      answer: "Vegetables",
+    },
+    {
+      question: "「さかな」 のいみはなんですか？",
+      options: ["Fish", "Chicken", "Egg"],
+      answer: "Fish",
+    },
+    {
+      question: "「きょう」 のいみはなんですか？",
+      options: ["Yesterday", "Today", "Tomorrow"],
+      answer: "Today",
+    },
+    {
+      question: "「あした」 のいみはなんですか？",
+      options: ["Today", "Tomorrow", "Yesterday"],
+      answer: "Tomorrow",
+    },
+    {
+      question: "「きのう」 のいみはなんですか？",
+      options: ["Tomorrow", "Yesterday", "Today"],
+      answer: "Yesterday",
+    },
+    {
+      question: "「へや」 のいみはなんですか？",
+      options: ["House", "Room", "Kitchen"],
+      answer: "Room",
+    },
+    {
+      question: "「おちゃ」 のいみはなんですか？",
+      options: ["Coffee", "Tea", "Water"],
+      answer: "Tea",
+    },
+    {
+      question: "「にく」 のいみはなんですか？",
+      options: ["Fish", "Vegetables", "Meat"],
+      answer: "Meat",
+    },
+    {
+      question: "「くるま」 のいみはなんですか？",
+      options: ["Train", "Bus", "Car"],
+      answer: "Car",
+    },
+    {
+      question: "「水」 のいみはなんですか？",
+      options: ["Water", "Fire", "Tree"],
+      answer: "Water",
+    },
+    {
+      question: "「火」 のいみはなんですか？",
+      options: ["Fire", "Water", "Earth"],
+      answer: "Fire",
+    },
+    {
+      question: "「木」 のいみはなんですか？",
+      options: ["Tree", "Mountain", "River"],
+      answer: "Tree",
+    },
+    {
+      question: "「金」 のいみはなんですか？",
+      options: ["Gold / Money", "Day", "Earth"],
+      answer: "Gold / Money",
+    },
+    {
+      question: "「土」 のいみはなんですか？",
+      options: ["Earth", "Water", "Fire"],
+      answer: "Earth",
+    },
+    {
+      question: "「人」 のいみはなんですか？",
+      options: ["Person", "Child", "Woman"],
+      answer: "Person",
+    },
+    {
+      question: "「男」 のいみはなんですか？",
+      options: ["Man", "Woman", "Child"],
+      answer: "Man",
+    },
+    {
+      question: "「女」 のいみはなんですか？",
+      options: ["Woman", "Man", "Mother"],
+      answer: "Woman",
+    },
+    {
+      question: "「子」 のいみはなんですか？",
+      options: ["Child", "Student", "Friend"],
+      answer: "Child",
+    },
+    {
+      question: "「山」 のいみはなんですか？",
+      options: ["Mountain", "River", "Forest"],
+      answer: "Mountain",
+    },
+    {
+      question: "「川」 のいみはなんですか？",
+      options: ["River", "Sea", "Lake"],
+      answer: "River",
+    },
+    {
+      question: "「上」 のいみはなんですか？",
+      options: ["Up", "Down", "Inside"],
+      answer: "Up",
+    },
+    {
+      question: "「下」 のいみはなんですか？",
+      options: ["Down", "Up", "Outside"],
+      answer: "Down",
+    },
+    {
+      question: "「中」 のいみはなんですか？",
+      options: ["Middle", "Outside", "Front"],
+      answer: "Middle",
+    },
+    {
+      question: "「外」 のいみはなんですか？",
+      options: ["Outside", "Inside", "Near"],
+      answer: "Outside",
     },
   ];
 
